@@ -68,7 +68,7 @@ export class BlackboardComponent implements OnInit {
   onOptionSelection(value) {
     if (value = this.cans) {
       console.log(value);
-      console.log(this.cans);
+      // console.log(this.cans);
       this.score = this.score + 100;
     } else {
       this.score = this.score - 100;

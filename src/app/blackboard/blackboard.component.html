@@ -1,7 +1,7 @@
 <section class="quizWrap container">
+    <a class="startQuiz" (click)="startQuiz()" [hidden]="hidden">START</a>
     <div class="row">
     <div class="col-xs-12">
-      <a class="startQuiz" (click)="startQuiz()" [hidden]="hidden">START</a>
       <div [hidden]="!hidden">
         <form *ngIf="i <= 7;else result">
           <div>Score : {{ score }}</div>
