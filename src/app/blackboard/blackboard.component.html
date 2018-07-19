@@ -1,4 +1,4 @@
-<section class="quizWrap container">
+<section class="quizWrap">
     <a class="startQuiz" (click)="startQuiz()" [hidden]="hidden">START</a>
     <div class="row">
     <div class="col-xs-12">
@@ -26,8 +26,8 @@
 
         <ng-template #result>
           <div class="result-txt">
-            You scored <span class="score-txt">650</span> out of the 8 questions you answered. <br />
-            Your accuracy is <span class="score-txt">81.25%</span>
+            You scored <span class="score-txt">{{ score }}</span> out of the 8 questions you answered. <br />
+            Your accuracy is <span class="score-txt">{{ score / 800 * 100 }} %</span>
           </div>
         </ng-template>
       </div>
