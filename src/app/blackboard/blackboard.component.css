@@ -1,0 +1,14 @@
+.btn.btn-warning {
+    margin-right: 15px;
+}
+
+.result-txt {
+    text-align: center;
+    font-size: 22px;
+    margin: 15% auto;
+}
+
+.score-txt {
+    font-size: 32px;
+    color: greenyellow;
+}

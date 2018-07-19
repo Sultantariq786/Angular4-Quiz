@@ -1,0 +1,34 @@
+<section class="quizWrap container">
+    <div class="row">
+    <div class="col-xs-12">
+      <div *ngIf="i <= 7;else result">
+        <a id="startQuiz" style="display: none;">START</a>
+        <div class="questionWrap" id="questionBox">{{ question }}</div>
+        <div class="optionWrap" id="optionBox">
+          <ul>
+            <li><input type="radio" name="answerOptions" value="ECMA Script">{{ ans1 }}</li>
+            <li><input type="radio" name="answerOptions" value="W3C">{{ ans2 }}</li>
+            <li><input type="radio" name="answerOptions" value="Java">{{ ans3 }}</li>
+            <li><input type="radio" name="answerOptions" value="W3schools">{{ ans4 }}</li>
+          </ul>
+        </div>
+        <div *ngIf="revealHint">
+          <div class="hintHidden">Hint :</div>
+          <div class="hintWrap hintHidden" id="hintBox">{{ hint }}</div>
+        </div>
+        <div class="quiz-button-group">
+          <button class="btn btn-warning" (click)="showHint()" [disabled]="revealHint">Hint</button>
+          <button class="btn btn-success" (click)="next()" [disabled]="stopQuiz">Next</button>
+        </div>
+      </div>
+      <ng-template #result>
+        <div class="result-txt">
+          You scored <span class="score-txt">650</span> out of the 8 questions you answered. <br />
+          Your accuracy is <span class="score-txt">81.25%</span>
+        </div>
+
+      </ng-template>
+    </div>
+    </div>
+  <section id="questionCount" style="display: block;">{{ i + 1 }}</section>
+</section>
