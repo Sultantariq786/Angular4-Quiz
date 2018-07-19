@@ -16,6 +16,7 @@ export class BlackboardComponent implements OnInit {
   public ans4;
   public hint;
   public cans;
+  public hidden = false;
   public revealHint = false;
   public stopQuiz = false;
 
@@ -30,6 +31,10 @@ export class BlackboardComponent implements OnInit {
     this.hint = this.qna.questionAndAnswer[this.i].hint;
     this.cans = this.qna.questionAndAnswer[this.i].quest;
     // console.log(this.question);
+  }
+
+  startQuiz() {
+    this.hidden = !this.hidden;
   }
 
   showHint() {
