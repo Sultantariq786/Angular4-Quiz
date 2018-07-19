@@ -22,6 +22,7 @@ export class BlackboardComponent implements OnInit {
   public score = 0;
   public questionNo = 1;
   public resetForm = null;
+  public selectedOption = '';
 
   constructor(private qna: QuestionAndAnswerService) { }
 
@@ -65,15 +66,13 @@ export class BlackboardComponent implements OnInit {
     this.resetForm = null;
   }
 
-  onOptionSelection(value) {
-    if (value = this.cans) {
-      console.log(value);
-      // console.log(this.cans);
+  onOptionSelection(event: any) {
+    this.selectedOption = event.target.value;
+    if (this.selectedOption === this.cans) {
       this.score = this.score + 100;
     } else {
       this.score = this.score - 100;
     }
-    this.resetForm = null;
   }
 
 }

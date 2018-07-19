@@ -8,10 +8,10 @@
           <div class="questionWrap" id="questionBox">{{ question }}</div>
           <div class="optionWrap" id="optionBox">
             <ul>
-              <li><input type="radio" name="answerOptions" value="{{ ans1 }}" (change)="onOptionSelection(value)">{{ ans1 }}</li>
-              <li><input type="radio" name="answerOptions" value="{{ ans2 }}" (change)="onOptionSelection(value)">{{ ans2 }}</li>
-              <li><input type="radio" name="answerOptions" value="{{ ans3 }}" (change)="onOptionSelection(value)">{{ ans3 }}</li>
-              <li><input type="radio" name="answerOptions" value="{{ ans4 }}" (change)="onOptionSelection(value)">{{ ans4 }}</li>
+              <li><input type="radio" name="answerOptions" value="{{ ans1 }}" (change)="onOptionSelection($event)">{{ ans1 }}</li>
+              <li><input type="radio" name="answerOptions" value="{{ ans2 }}" (change)="onOptionSelection($event)">{{ ans2 }}</li>
+              <li><input type="radio" name="answerOptions" value="{{ ans3 }}" (change)="onOptionSelection($event)">{{ ans3 }}</li>
+              <li><input type="radio" name="answerOptions" value="{{ ans4 }}" (change)="onOptionSelection($event)">{{ ans4 }}</li>
             </ul>
           </div>
           <div class="hintWrap" *ngIf="revealHint">
