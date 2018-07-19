@@ -3,8 +3,8 @@
     <div class="row">
     <div class="col-xs-12">
       <div [hidden]="!hidden">
-        <form *ngIf="i <= 7;else result">
-          <div>Score : {{ score }}</div>
+        <form *ngIf="i <= 14;else result">
+          <div>Score : {{ score }}</div><div>Score : {{ mins }} : {{ secs }}</div>
           <div class="questionWrap" id="questionBox">{{ question }}</div>
           <div class="optionWrap" id="optionBox">
             <ul>
@@ -26,8 +26,8 @@
 
         <ng-template #result>
           <div class="result-txt">
-            You scored <span class="score-txt">{{ score }}</span> out of the 8 questions you answered. <br />
-            Your accuracy is <span class="score-txt">{{ score / 800 * 100 }} %</span>
+            You scored <span class="score-txt">{{ score }}</span> out of the 15 questions you answered. <br />
+            Your accuracy is <span class="score-txt">{{ score / 1500 * 100 }} %</span>
           </div>
         </ng-template>
       </div>

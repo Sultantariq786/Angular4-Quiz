@@ -23,6 +23,8 @@ export class BlackboardComponent implements OnInit {
   public questionNo = 1;
   public resetForm = null;
   public selectedOption = '';
+  public mins = 14;
+  public secs = 59;
 
   constructor(private qna: QuestionAndAnswerService) { }
 
@@ -39,6 +41,7 @@ export class BlackboardComponent implements OnInit {
 
   startQuiz() {
     this.hidden = !this.hidden;
+    // this.onTimer();
   }
 
   showHint() {
@@ -47,7 +50,7 @@ export class BlackboardComponent implements OnInit {
   }
 
   next() {
-    if (this.i > 7) {
+    if (this.i > 14) {
       this.stopQuiz = true;
       // this.hidden = true;
       // console.log(this.question);
@@ -77,5 +80,24 @@ export class BlackboardComponent implements OnInit {
     this.resetForm = null;
     this.next();
   }
+
+  // countdownStart() {
+  //   setInterval((this.mins = this.mins - 1), 1000);
+  // }
+
+  // onTimer() {
+  // // totalTime.innerHTML = mins + " : " + secs;
+  // this.secs--;
+  // if (this.secs === 0) {
+  //   this.secs = 59;
+  //   this.mins --;
+  //   }
+  // }
+
+
+  // offTimer() {
+  //   var endTimer = setTimeout(onTimer, 1000);
+  // }
+
 
 }
