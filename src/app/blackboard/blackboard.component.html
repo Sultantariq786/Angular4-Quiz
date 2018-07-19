@@ -3,25 +3,27 @@
     <div class="col-xs-12">
       <a class="startQuiz" (click)="startQuiz()" [hidden]="hidden">START</a>
       <div [hidden]="!hidden">
-        <div *ngIf="i <= 7;else result">
+        <form *ngIf="i <= 7;else result">
+          <div>Score : {{ score }}</div>
           <div class="questionWrap" id="questionBox">{{ question }}</div>
           <div class="optionWrap" id="optionBox">
             <ul>
-              <li><input type="radio" name="answerOptions" value="ECMA Script">{{ ans1 }}</li>
-              <li><input type="radio" name="answerOptions" value="W3C">{{ ans2 }}</li>
-              <li><input type="radio" name="answerOptions" value="Java">{{ ans3 }}</li>
-              <li><input type="radio" name="answerOptions" value="W3schools">{{ ans4 }}</li>
+              <li><input type="radio" name="answerOptions" value="{{ ans1 }}" (change)="onOptionSelection(value)">{{ ans1 }}</li>
+              <li><input type="radio" name="answerOptions" value="{{ ans2 }}" (change)="onOptionSelection(value)">{{ ans2 }}</li>
+              <li><input type="radio" name="answerOptions" value="{{ ans3 }}" (change)="onOptionSelection(value)">{{ ans3 }}</li>
+              <li><input type="radio" name="answerOptions" value="{{ ans4 }}" (change)="onOptionSelection(value)">{{ ans4 }}</li>
             </ul>
           </div>
-          <div *ngIf="revealHint">
-            <div class="hintHidden">Hint :</div>
-            <div class="hintWrap hintHidden" id="hintBox">{{ hint }}</div>
+          <div class="hintWrap" *ngIf="revealHint">
+            <div class="hint-title">Hint :</div>
+            <div>{{ hint }}</div>
           </div>
           <div class="quiz-button-group">
             <button class="btn btn-warning" (click)="showHint()" [disabled]="revealHint">Hint</button>
             <button class="btn btn-success" (click)="next()" [disabled]="stopQuiz">Next</button>
           </div>
-        </div>
+        </form>
+
         <ng-template #result>
           <div class="result-txt">
             You scored <span class="score-txt">650</span> out of the 8 questions you answered. <br />
@@ -31,5 +33,5 @@
       </div>
     </div>
     </div>
-  <section id="questionCount" style="display: block;">{{ i + 1 }}</section>
+  <section id="questionCount" style="display: block;" [hidden]="hidden">{{ questionNo }}</section>
 </section>

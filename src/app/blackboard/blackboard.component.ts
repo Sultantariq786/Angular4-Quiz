@@ -19,6 +19,10 @@ export class BlackboardComponent implements OnInit {
   public hidden = false;
   public revealHint = false;
   public stopQuiz = false;
+  public score = 0;
+  public questionNo = 1;
+  public resetForm = null;
+  public selectedValue;
 
   constructor(private qna: QuestionAndAnswerService) { }
 
@@ -29,7 +33,7 @@ export class BlackboardComponent implements OnInit {
     this.ans3 = this.qna.questionAndAnswer[this.i].ans3;
     this.ans4 = this.qna.questionAndAnswer[this.i].ans4;
     this.hint = this.qna.questionAndAnswer[this.i].hint;
-    this.cans = this.qna.questionAndAnswer[this.i].quest;
+    this.cans = this.qna.questionAndAnswer[this.i].cans;
     // console.log(this.question);
   }
 
@@ -39,12 +43,13 @@ export class BlackboardComponent implements OnInit {
 
   showHint() {
     this.revealHint = !this.revealHint;
+    this.score = -50;
   }
 
   next() {
     if (this.i > 7) {
-      // this.revealHint = false;
       this.stopQuiz = true;
+      // this.hidden = true;
       // console.log(this.question);
     } else {
       this.i++;
@@ -54,9 +59,22 @@ export class BlackboardComponent implements OnInit {
       this.ans3 = this.qna.questionAndAnswer[this.i].ans3;
       this.ans4 = this.qna.questionAndAnswer[this.i].ans4;
       this.hint = this.qna.questionAndAnswer[this.i].hint;
-      this.cans = this.qna.questionAndAnswer[this.i].quest;
+      this.cans = this.qna.questionAndAnswer[this.i].cans;
       this.revealHint = false;
+      this.questionNo = this.i + 1;
     }
+    this.resetForm = null;
+  }
+
+  onOptionSelection(selectedValue) {
+    if (selectedValue = this.cans) {
+      console.log(selectedValue);
+      console.log(this.cans);
+      this.score = this.score + 100;
+    } else {
+      this.score = this.score;
+    }
+    this.resetForm = null;
   }
 
 }

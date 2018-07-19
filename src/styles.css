@@ -113,3 +113,13 @@ body{
 .quiz-button-group {
     margin-top: 20px;
 }
+
+.hintWrap {
+    font-size: 16px;
+    margin-top: 35px;
+}
+
+.hint-title {
+    color: #ff7b7b;
+    font-weight: 600;
+}
