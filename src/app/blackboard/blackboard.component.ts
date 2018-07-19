@@ -43,7 +43,7 @@ export class BlackboardComponent implements OnInit {
 
   showHint() {
     this.revealHint = !this.revealHint;
-    this.score = -50;
+    this.score = this.score - 50;
   }
 
   next() {
@@ -63,16 +63,19 @@ export class BlackboardComponent implements OnInit {
       this.revealHint = false;
       this.questionNo = this.i + 1;
     }
-    this.resetForm = null;
   }
 
   onOptionSelection(event: any) {
     this.selectedOption = event.target.value;
     if (this.selectedOption === this.cans) {
+      // console.log(this.selectedOption);
+      // console.log(this.cans);
       this.score = this.score + 100;
     } else {
       this.score = this.score - 100;
     }
+    this.resetForm = null;
+    this.next();
   }
 
 }
