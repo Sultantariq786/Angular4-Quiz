@@ -1,10 +1,17 @@
 <section class="quizWrap">
-    <a class="startQuiz" (click)="startQuiz()" [hidden]="hidden">START</a>
+    <div [hidden]="hidden">
+      <a class="startQuiz" (click)="startQuiz()">START</a>
+      <div class="quiz-note">
+        Note: This quiz has 15 questions of 100pts each. If you use hint 50pts will be deducted for each hint. <br />
+        Total time for it to complete is 15 mins. <br />
+        Press Start once ready. Good Luck :)
+      </div>
+    </div>  
     <div class="row">
     <div class="col-xs-12">
       <div [hidden]="!hidden">
         <form *ngIf="i <= 14;else result">
-          <div>Score : {{ score }}</div><div>Score : {{ mins }} : {{ secs }}</div>
+          <div>Score : {{ score }}</div><div class="quizTime">Time Left : {{ mins }} : {{ secs }}</div>
           <div class="questionWrap" id="questionBox">{{ question }}</div>
           <div class="optionWrap" id="optionBox">
             <ul>

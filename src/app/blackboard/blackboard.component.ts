@@ -41,7 +41,7 @@ export class BlackboardComponent implements OnInit {
 
   startQuiz() {
     this.hidden = !this.hidden;
-    // this.onTimer();
+    this.onTimer();
   }
 
   showHint() {
@@ -85,15 +85,15 @@ export class BlackboardComponent implements OnInit {
   //   setInterval((this.mins = this.mins - 1), 1000);
   // }
 
-  // onTimer() {
-  // // totalTime.innerHTML = mins + " : " + secs;
-  // this.secs--;
-  // if (this.secs === 0) {
-  //   this.secs = 59;
-  //   this.mins --;
-  //   }
-  // }
-
+  onTimer() {
+    setInterval (() => {
+      this.secs--;
+      if (this.secs === 0) {
+        this.secs = 59;
+        this.mins--;
+      }
+    }, 1000);
+  }
 
   // offTimer() {
   //   var endTimer = setTimeout(onTimer, 1000);

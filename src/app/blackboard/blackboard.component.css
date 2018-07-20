@@ -1,3 +1,8 @@
+.quiz-note {
+    text-align: center;
+    font-size: 18px;
+}
+
 .btn.btn-warning {
     margin-right: 15px;
 }
@@ -10,5 +15,9 @@
 
 .score-txt {
     font-size: 32px;
+    color: greenyellow;
+}
+
+.quizTime {
     color: greenyellow;
 }

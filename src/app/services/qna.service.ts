@@ -40,4 +40,13 @@ export class QuestionAndAnswerService {
                    'Angular 4 Metadata can be used to add more data to an Angular JS class',
                    'Angular 4 Metadata can be used to add more data to an Angular JS class'),
     ];
+
+    // getQuestionAndAnswer() {
+    //     return this.questionAndAnswer;  // if using private at the top then to make it access from outside.
+    // }
+
+    // getQuestionAndAnswer() {
+    //     return this.questionAndAnswer.slice();  // if using private at the top then to make it access from outside and
+                                                   // making a copy of array so original array stays as it was.
+    // }
 }
